@@ -1,0 +1,60 @@
+#!/usr/bin/env node
+
+process.env.NODE_PATH = __dirname + "/../node_modules/"
+
+// command：自定义执行的命令(核心)
+// option：可选参数
+// alias：用于 执行命令的别名
+// description：命令描述
+// action：执行命令后所执行的方法回调
+// usage：用户使用提示
+// parse：解析命令行参数，注意这个方法一定要放到最后调用
+
+const program = require("commander")
+program.version(require("../package.json").version) // 设置版本信息
+program.usage("<command> [options] 命令") // 当用户输入命令并且没有匹配到的时候 出现的提示
+
+// 新建命令
+program
+  .command("add")
+  .description("新建一个模板")
+  .alias("a")
+  .action(() => {
+    // 执行命令之后所执行的回调
+    // console.log("新建一个模板")
+    require("../command/add.js")()
+  })
+
+// 列出命令
+program
+  .command("list")
+  .description("列出所有的模板列表")
+  .alias("l")
+  .action(() => {
+    console.log("列出所有的模板列表")
+  })
+
+// 初始化命令
+program
+  .command("init")
+  .description("初始化一个项目")
+  .alias("i")
+  .action(() => {
+    console.log("初始化一个项目")
+  })
+
+// 删除项目命令
+
+program
+  .command("delete")
+  .description("删除模板")
+  .alias("d")
+  .action(() => {
+    console.log("删除模板")
+  })
+
+// 最后处理没有的命令 - 出现帮助提示
+program.parse(process.argv)
+if (!program.args.length) {
+  program.help()
+}

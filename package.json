@@ -6,6 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "bin": {
+    "jin-cli": "bin/jin"
+  },
   "author": "",
   "license": "ISC",
   "devDependencies": {
@@ -13,5 +16,9 @@
     "co": "^4.6.0",
     "co-prompt": "^1.0.0",
     "commander": "^9.0.0"
+  },
+  "dependencies": {
+    "@types/node": "^17.0.17",
+    "typings": "^2.1.1"
   }
 }

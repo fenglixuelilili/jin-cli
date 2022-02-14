@@ -43,12 +43,12 @@ program
 
 // 下载命令
 program
-.command("install <cmd>")
-.description("初始化一个项目")
-.alias("i")
-.action(( cmd ) => {
-  require("../command/install.js")(cmd)
-})
+  .command("install <cmd>")
+  .description("初始化一个项目")
+  .alias("i")
+  .action((cmd) => {
+    require("../command/install.js")(cmd)
+  })
 
 // 最后处理没有的命令 - 出现帮助提示
 program.parse(process.argv)

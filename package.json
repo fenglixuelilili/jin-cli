@@ -1,6 +1,6 @@
 {
   "name": "jyj-cli",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -14,14 +14,13 @@
   },
   "author": "fenglixue",
   "license": "ISC",
-  "devDependencies": {
+  "devDependencies": {},
+  "dependencies": {
+    "typings": "^2.1.1",
     "@types/node": "^17.0.17",
     "chalk": "^5.0.0",
     "co": "^4.6.0",
     "co-prompt": "^1.0.0",
     "commander": "^9.0.0"
-  },
-  "dependencies": {
-    "typings": "^2.1.1"
   }
 }
